@@ -25,11 +25,12 @@ it("Book inspection with billing adress",() => {
     //cy.get('.ant-picker-header-next-btn') .click();//if all time slots are empty
     //cy.get('.ant-picker-body [title="2022-09-02"]') .click(); // if all time slots are empty
     cy.get('.btn_address') .click();
-    cy.get('[class="form__input pac-target-input"]') .type('Düsseldorfer Straße 2, Frankfurt am Main, Deutschland')
+    cy.get('[class="form__input pac-target-input"]') .type('Düsseldorfer Straße 1, Frankfurt am Main, Deutschland')
     cy.get('body > div.pac-container.pac-logo.hdpi > div:nth-child(1) > span.pac-item-query > span:nth-child(1)') .click();
     cy.get('[name="apartment"]') .type('22');
     cy.get('.form-item .btn_green.btn_h54') .click();
     cy.get('.form_booking .btn_green.btn_h54') .click() .wait(5000);
     cy.get('.btn_bill') .click();
     cy.get('.ant-modal-confirm-btns .ant-btn-primary') .click();
+    //cy.get('body > div:nth-child(16) > div > div.ant-modal-wrap > div > div.ant-modal-content > div > div > div.ant-modal-confirm-btns > button.ant-btn.ant-btn-primary') .click();
 })
