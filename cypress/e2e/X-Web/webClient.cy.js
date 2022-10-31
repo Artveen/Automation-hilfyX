@@ -10,7 +10,7 @@ import 'cypress-iframe'
 
 describe('Test suit for HilfyX Web Client', () => {
 describe ('Positive scenarios', () =>{
-it.skipcd("Registration", () => {
+it.skip("Registration", () => {
     cy.visit('https://web.stage.dopomo.com.ua/')
     cy.get('input.form-control').type('962261815');
     cy.get('button.btn.btn_green.btn_h54').click();
