@@ -30,14 +30,14 @@ submitLoginFormNegativEmail(Email, Password){
     this.getSubmitButton().click();
 }
 
-submitLoginFormNegativEmail(email1, Password){
+submitLoginFormNegativBigEmail(email1, Password){
     cy.log("Fill form with 300 symbols in email")
     this.getLoginField().type(email1)
     this.getPasswordField().type(Password);
     this.getSubmitButton().click();
 }
 
-submitLoginFormNegativEmail(email, password1){
+submitLoginFormUncorectPassword(email, password1){
     cy.log("Login with uncorrect password")
     this.getLoginField().type(email)
     this.getPasswordField().type(password1);
