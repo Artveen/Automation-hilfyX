@@ -18,7 +18,11 @@ describe('Negative scenarios', ()=>{
         authorizationPage.visit();
         authorizationPage.submitLoginForm(unValidCredForAdmin.email1, unValidCredForAdmin.Password);
             })
-    it("Submit with uncorect password",()=>{
+    it("Submit with short password",()=>{
+        authorizationPage.visit();
+        authorizationPage.submitLoginForm(superAdmin.email, unValidCredForAdmin.password1);
+            })
+    it("Submit with uncorrect long password",()=>{
         authorizationPage.visit();
         authorizationPage.submitLoginForm(superAdmin.email, unValidCredForAdmin.password1);
             })

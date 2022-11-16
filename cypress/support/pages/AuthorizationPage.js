@@ -37,10 +37,17 @@ submitLoginFormNegativBigEmail(email1, Password){
     this.getSubmitButton().click();
 }
 
-submitLoginFormUncorectPassword(email, password1){
-    cy.log("Login with uncorrect password")
+submitLoginFormWithShortPassword(email, password1){
+    cy.log("Login with short password")
     this.getLoginField().type(email)
     this.getPasswordField().type(password1);
+    this.getSubmitButton().click();
+}
+
+submitLoginFormWithLongUncorrecttPassword(email, password2){
+    cy.log("Login with pasword with long uncorrect password")
+    this.getLoginField().type(email)
+    this.getPasswordField().type(password2);
     this.getSubmitButton().click();
 }
 
