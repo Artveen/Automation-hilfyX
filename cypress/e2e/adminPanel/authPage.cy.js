@@ -2,7 +2,7 @@ import authorizationPage from '../../support/pages/authorizationPage'
 import superAdmin from '../../fixtures/superAdmin.json'
 import unValidCredForAdmin from '../../fixtures/unValidCredForAdmin.json'
 
-describe('Test suit for  SuperAdmin', () => {
+describe('Test suite for  SuperAdmin', () => {
 describe ('Positive scenarios', () =>{
 it("Auth for Super Admin ",() => {
         authorizationPage.visit();
