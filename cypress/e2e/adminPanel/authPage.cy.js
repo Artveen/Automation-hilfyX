@@ -1,6 +1,6 @@
-import authorizationPage from '../../support/pages/authorizationPage'
-import superAdmin from '../../fixtures/superAdmin.json'
-import unValidCredForAdmin from '../../fixtures/unValidCredForAdmin.json'
+import authorizationPage from '../../support/pages/adminPanel/AuthorizationPage'
+import superAdmin from '../../fixtures/superAdmin/superAdmin.json'
+import unValidCredForAdmin from '../../fixtures/superAdmin/unValidCredForAdmin.json'
 
 describe('Test suite for  SuperAdmin', () => {
 describe ('Positive scenarios', () =>{

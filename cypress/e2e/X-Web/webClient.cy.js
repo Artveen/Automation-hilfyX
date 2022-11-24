@@ -2,11 +2,7 @@
 import 'cypress-iframe'
 
  let token;
-// beforeEach(() => {
-//     cy.setCookie
-//     cy.visit('https://web.stage.dopomo.com.ua/')
-           
-// })
+
 
 describe('Test suit for HilfyX Web Client', () => {
 describe ('Positive scenarios', () =>{

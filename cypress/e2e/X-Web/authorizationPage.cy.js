@@ -11,6 +11,7 @@ it("Authorization",()=>{
 describe("Negative scenarios", ()=>{
 it("Auth with wrong code",()=>{
     webAuthorizationPage.visit();
+    cy.wait(50000)
     webAuthorizationPage.submitLoginFormWithWrongCode(user.phoneNumber, user.incorrectCode1, user.incorrectCode2,user.incorrectCode3, user.incorrectCode4)
 })    
 })
