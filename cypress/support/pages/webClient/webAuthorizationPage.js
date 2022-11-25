@@ -4,7 +4,13 @@ visit(){
 }
 getPhoneNumberField(){
     return cy.get('input.form-control')
-    return cy.get('.form__container .form__item:nth-child(1) .form__input')
+
+}
+getStartButton(){
+    return cy.get('button.btn.btn_green.btn_h54')   
+} 
+getVerificationField1(){
+   return cy.get('.form__container .form__item:nth-child(1) .form__input')
 }
 getVerificationField2(){
     return cy.get('.form__container .form__item:nth-child(2) .form__input')
@@ -18,6 +24,8 @@ getVerificationField4(){
 getSubmitButton(){
     return cy.get('button.btn.btn_green.btn_h54')
 }
+
+
 submitLoginForm(phoneNumber, code1, code2, code3, code4){
 cy.log("Fill authorization form")
 this.getPhoneNumberField().type(phoneNumber);

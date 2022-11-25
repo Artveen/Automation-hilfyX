@@ -1,6 +1,7 @@
 import webAuthorizationPage from "../../support/pages/webClient/webAuthorizationPage";
 import user from "../../fixtures/webClient/user.json"
 
+
 describe("Test Suite for login in web client",()=>{
 describe("Positive scenarios",()=>{
 it("Authorization",()=>{

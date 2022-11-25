@@ -30,7 +30,7 @@ getSurnameField(){
     return cy.get('[name="last_name"]')
 }
 getEmailField(){
-    return ('[name="email"]')
+    return cy.get('[name="email"]')
 }
 getSubmitButton(){
    return cy.get('[class="btn btn_green btn_h54"]') 
@@ -48,7 +48,7 @@ getDeleteProfileButton(){
     return cy.get('[class="btn_delete"]') 
 }
 getSubmitDeleteButton(){
-    return   cy.get('[id="submit"]')
+    return   cy.get('[class="ant-btn ant-btn-primary"]')
 }
 positiveRegistrationCase(phoneNumber, code1, code2, code3, code4, name, surname, email){
     cy.log("Complete registration")
@@ -65,6 +65,9 @@ positiveRegistrationCase(phoneNumber, code1, code2, code3, code4, name, surname,
     this.getSubmitButton().click();
     this.getOnbording().click();
     this.getCompleteRegistrationButton().click();
+    this.getProfile().click();
+    this.getDeleteProfileButton().click();
+    this.getSubmitDeleteButton().click();
 }
 registrationWithLongCreds(phoneNumber, code1, code2, code3, code4, longName, longSurname, longEmail){
     cy.log("Complete registration with long credentials")

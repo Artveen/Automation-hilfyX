@@ -5,7 +5,7 @@ import user from "../../fixtures/webClient/user.json"
 
 describe("Test suit for user registration", ()=>{
 describe ("Positive scenarios",()=>{
-it("Registration with long creds",()=>{
+it.skip("Registration with long creds",()=>{
     webRegistrationPage.visit();
     webRegistrationPage.registrationWithLongCreds(user.phoneNumber, user.code1, user.code2, user.code3, user.code4, longdUserRegistration.longName, longdUserRegistration.longSurname, longdUserRegistration.longEmail);
 })
