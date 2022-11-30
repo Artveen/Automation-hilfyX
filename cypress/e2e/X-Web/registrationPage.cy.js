@@ -1,5 +1,5 @@
 import webRegistrationPage from "../../support/pages/webClient/webRegistrationPage";
-import registrationUser from "../../fixtures/webClient/reristrationUser.json"
+import registrationUser from "../../fixtures/webClient/registrationUser.json"
 import longdUserRegistration from "../../fixtures/webClient/longUserRegistration.json"
 import user from "../../fixtures/webClient/user.json"
 

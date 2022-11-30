@@ -5,7 +5,7 @@ import cardNumber from "../../fixtures/webClient/cardNumber.json"
 
 describe ("Test suite for delete account", ()=>{
 describe("Posititve scenarios",()=>{
- it.skip("Delete account with zero balance",()=>{
+ it("Delete account with zero balance",()=>{
     webDeletePage.visit();
     webDeletePage.deleteAccountWithZeroBalance(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
  })
