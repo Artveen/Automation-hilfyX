@@ -1,11 +1,13 @@
 import bookRemoteAssistPage from "../../support/pages/webClient/bookRemoteAssistPage";
+import webAuthorizationPage from '../../support/pages/webClient/webAuthorizationPage'
 import user from "../../fixtures/webClient/user.json"
 
 describe("Test suite for booking remote assist",()=>{
 describe("Positive scenarios",()=>{
     it("Book remote assist",()=>{
     bookRemoteAssistPage.visit();
-    bookRemoteAssistPage.createOrderRemoteAssist(user.phoneNumber, user.code1, user.code2, user.code3, user.code4)
+    webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
+    bookRemoteAssistPage.createOrderRemoteAssist()
     })
 })
 })
