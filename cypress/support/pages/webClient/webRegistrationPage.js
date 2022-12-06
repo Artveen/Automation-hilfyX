@@ -37,9 +37,7 @@ positiveRegistrationCase(name, surname, email){
     this.getSubmitButton().click();
     this.getOnbording().click();
     this.getCompleteRegistrationButton().click();
-    this.getProfile().click();
-    this.getDeleteProfileButton().click();
-    this.getSubmitDeleteButton().click();
+    
 }
 registrationWithLongCreds(longName, longSurname, longEmail){
     cy.log("Complete registration with long credentials")

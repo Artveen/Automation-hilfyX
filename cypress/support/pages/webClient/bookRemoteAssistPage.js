@@ -18,19 +18,17 @@ class bookingPageRemoteAssist {
         return cy.get('[class="form-item"]')
     }
     submitBooking(){
-        return cy.get('[class="btn btn_green btn_h54"]') 
+        return cy.get('[class="btn btn_green btn_h54"]:nth-child(1)') 
     }
     
     createOrderRemoteAssist(){
         cy.log("Create order remote assist")
-        this.getSubmitButton().click();
         this.getBookingPage().click();
         this.getTimePicker().click();
         this.submitBooking().click();
         }
     createRemoteAssistWithReferalPromo(referal){
         cy.log("Create remote assist with referal promo")
-        this.getSubmitButton().click();
         this.getBookingPage().click();
         this.getTimePicker().click();
         this.getPromoCodeWindow().click();

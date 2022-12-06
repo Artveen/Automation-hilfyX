@@ -28,7 +28,7 @@ class webDeletePage{
         cy.log("Delete account with zero balance")
         this.getProfile().click()
         this.getDeleteProfileButton().click();
-        this.getSubmitButton().click();
+        this.getSubmitDeleteButton().click();
         }
     deleteAccountWithNEgativeBalancePayment(cardNumber, date, cvc){
         cy.log("Delete account with negative balance + payment")
