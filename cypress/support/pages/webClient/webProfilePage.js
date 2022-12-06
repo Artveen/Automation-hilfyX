@@ -56,6 +56,7 @@ class webProfilePage{
     getSaveAddressButton(){
         return cy.get('.lib-modal .btn')
     }
+    
     addBillingAddress(firstName, surName, street, houseNumber, country, city, zipCode){
         cy.log("Add billing address")
         this.getProfile().click()
@@ -78,7 +79,7 @@ class webProfilePage{
         this.getGendorSelectorField().click().first().click();
         this.getFirstNameField().type(shortFirstName);
         this.getSurnameField().type(shortSurName);
-        this.getAddressField().type(shortAddress);
+        this.getAddressField().type(shortStreet);
         this.getHouseNumberField().type(shortHouseNumber);
         this.getCountryField().type(shortCountry);
         this.getCityField().type(shortCity);
@@ -104,6 +105,26 @@ class webProfilePage{
     addAddress(address, flat, comment){
         cy.log("Add address in profile");
         this.getProfile().click();
+        this.getAddAddressButton().click();
+        this.typeAddress().type(address);
+        this.pickAddress().click();
+        this.getFlatField().type(flat);
+        this.getCommentField().type(comment);
+        this.getSaveAddressButton().click();
+    }
+    addAddressAndBillingAddress(firstName, surName, street, houseNumber, country, city, zipCode,address, flat, comment){
+        cy.log("Add billing address and address")
+        this.getProfile().click()
+        this.getAddillingAddress().click()
+        this.getGendorSelectorField().click().first().click()
+        this.getFirstNameField().type(firstName)
+        this.getSurnameField().type(surName)
+        this.getStreetField() .type(street)
+        this.getHouseNumberField().type(houseNumber)
+        this.getCountryField().type(country)
+        this.getCityField().type(city)
+        this.getPostCodeField().type(zipCode)
+        this.getSaveButton().click()
         this.getAddAddressButton().click();
         this.typeAddress().type(address);
         this.pickAddress().click();
