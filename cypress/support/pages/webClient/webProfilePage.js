@@ -1,62 +1,73 @@
 class webProfilePage{
     visit(){
-        cy.visit('https://web.stage.dopomo.com.ua/cabinet')
+        cy.visit('https://web.stage.dopomo.com.ua/cabinet');
     }
     getProfile(){
         return cy.get('[class="menu__center"] [class="font-bold foz-14"]');
     }
     getAddillingAddress(){
-        return cy.get('.billing-address') 
+        return cy.get('.billing-address'); 
     }
     getGendorSelectorField(){
-        return cy.get('.ant-select-selection-item')
+        return cy.get('.ant-select-selection-item');
     }
     getFirstNameField(){
-        return cy.get('.form__item.mb-16 [name="first_name"]')
+        return cy.get('.form__item.mb-16 [name="first_name"]');
     }
     getSurnameField(){
-        return cy.get('.form__item.mb-16 [name="last_name"]')
+        return cy.get('.form__item.mb-16 [name="last_name"]');
     }
     getStreetField(){
-        return cy.get('.form__item.mb-16 [name="street"]')
+        return cy.get('.form__item.mb-16 [name="street"]');
     }
     getHouseNumberField(){
-        return cy.get('.form__item.mb-16 [name="house"]')
+        return cy.get('.form__item.mb-16 [name="house"]');
     }
     getCountryField(){
-        return cy.get('.form__item.mb-16 [name="country"]')
+        return cy.get('.form__item.mb-16 [name="country"]');
     }
     getCityField(){
-        return cy.get('.form__item.mb-16 [name="city"]')
+        return cy.get('.form__item.mb-16 [name="city"]');
     }
     getPostCodeField(){
-        return cy.get('.form__item.mb-16 [name="postcode"]')
+        return cy.get('.form__item.mb-16 [name="postcode"]');
     }
     getSaveButton(){
-        return cy.get('.form-item .btn.btn_green.btn_h54')
+        return cy.get('.form-item .btn.btn_green.btn_h54');
     }
     getDeleteBillingButton(){
-        return cy.get ('[viewBox="0 0 18 20"]')
+        return cy.get ('[viewBox="0 0 18 20"]');
     }
     getAddAddressButton(){
-        return cy.get('[class="ellipsis btn btn_green btn_add-address"]')
+        return cy.get('[class="ellipsis btn btn_green btn_add-address"]');
     }
     typeAddress(){
-        return cy.get('[class="form__input pac-target-input"]') 
+        return cy.get('[class="form__input pac-target-input"]'); 
     }
     pickAddress(){
-        return cy.get('body > div.pac-container.pac-logo.hdpi > div:nth-child(1) > span.pac-item-query > span:nth-child(1)')
+        return cy.get('body > div.pac-container.pac-logo.hdpi > div:nth-child(1) > span.pac-item-query > span:nth-child(1)');
     }
     getFlatField(){
-        return cy.get('[name="apartment"]') 
+        return cy.get('[name="apartment"]');
     }
     getCommentField(){
-        return cy.get('[placeholder="Comment"]')
+        return cy.get('[placeholder="Comment"]');
     }
     getSaveAddressButton(){
-        return cy.get('.lib-modal .btn')
+        return cy.get('.lib-modal .btn');
     }
-    
+    getProfileNameField(){
+        return cy.get('[placeholder="First name"]');
+    }
+    getProfileSurname(){
+        return cy.get('[placeholder="Last name"]')
+    }
+    getProfileEmail(){
+        return cy.get('[placeholder="Email"]')
+    }
+    getSaveProfileButton(){
+        return cy.get('[class="btn btn_green btn_h54"]')
+    }
     addBillingAddress(firstName, surName, street, houseNumber, country, city, zipCode){
         cy.log("Add billing address")
         this.getProfile().click()
@@ -131,6 +142,14 @@ class webProfilePage{
         this.getFlatField().type(flat);
         this.getCommentField().type(comment);
         this.getSaveAddressButton().click();
+    }
+    changeClientName(longName, longSurname, longEmail){
+        cy.log("Change client name, surname, email, in profile");
+        this.getProfile().click();
+        this.getProfileNameField().type(longName);
+        this.getProfileSurname().type(longSurname);
+        this.getProfileEmail().type(longEmail);
+        this.getSaveProfileButton().click();
     }
 } export default new webProfilePage
 

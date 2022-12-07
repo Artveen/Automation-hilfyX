@@ -3,6 +3,7 @@ import webProfilePage from "../../support/pages/webClient/webProfilePage"
 import user from "../../fixtures/webClient/user.json"
 import billingAddress from "../../fixtures/webClient/billingAddress.json"
 import clientAddress from "../../fixtures/webClient/clientAddress.json"
+import userProfile from "../../fixtures/webClient/userProfile.json"
 
 describe ("Test suite for profile web client",()=>{
 describe("Positive scenarios",()=>{
@@ -21,10 +22,15 @@ describe("Positive scenarios",()=>{
         webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
         webProfilePage.addBillingAddress(billingAddress.firstName, billingAddress.surName, billingAddress.street, billingAddress.houseNumber, billingAddress.country, billingAddress.city, billingAddress.zipCode);
     })
-    it.only("Add address",()=>{
+    it("Add address",()=>{
         webProfilePage.visit();
         webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
         webProfilePage.addAddress(clientAddress.address, clientAddress.flat, clientAddress.comment)
         })
+    it("Change profile",()=>{
+        webProfilePage.visit();
+        webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
+        webProfilePage.changeClientName(userProfile.longName, userProfile.longSurname, userProfile.longEmail);
+    })
 })
 })
