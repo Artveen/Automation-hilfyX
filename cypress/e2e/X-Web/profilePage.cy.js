@@ -27,10 +27,14 @@ describe("Positive scenarios",()=>{
         webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
         webProfilePage.addAddress(clientAddress.address, clientAddress.flat, clientAddress.comment)
         })
-    it("Change profile",()=>{
+    
+})
+describe("Negative scenarios",()=>{
+    it("Change profile, expected 409 conflict",()=>{
         webProfilePage.visit();
         webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
         webProfilePage.changeClientName(userProfile.longName, userProfile.longSurname, userProfile.longEmail);
     })
+    
 })
 })

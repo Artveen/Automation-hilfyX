@@ -148,7 +148,7 @@ class webProfilePage{
         this.getProfile().click();
         this.getProfileNameField().type(longName);
         this.getProfileSurname().type(longSurname);
-        this.getProfileEmail().type(longEmail);
+        this.getProfileEmail().type(`{home}`).type(longEmail);
         this.getSaveProfileButton().click();
     }
 } export default new webProfilePage

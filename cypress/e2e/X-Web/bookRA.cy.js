@@ -7,7 +7,7 @@ let token;
 
 describe("Test suite for booking remote assist",()=>{
 describe("Positive scenarios",()=>{
-    it.skip("Book remote assist",()=>{
+    it("Book remote assist",()=>{
     bookRemoteAssistPage.visit();
     webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
    bookRemoteAssistPage.createOrderRemoteAssist()
