@@ -33,7 +33,7 @@ class bookInspectionPage{
         return cy.get('[class="btn btn_grey btn_h54"]');
     }
     getTypePromoCode(){
-        return cy.get('[class="form__input form__input_uppercase "]')
+        return cy.get('[placeholder="AB012345"]')
     }
     getApplyPromoButton(){
         return cy.get('[class="form-item"]')
@@ -57,13 +57,13 @@ class bookInspectionPage{
         this.getStripeWindow().find('[id="Field-cvcInput"]').type(cvc);
         this.getSubmitPaymentButton().click();
     }
-    completeBookingWithDiscountPromoAndPayment(cardNumber, date, cvc, discount){
+    completeBookingWithDiscountPromoAndPayment(discount, cardNumber, date, cvc){
         cy.log("Create order with discount promo and payment");
         this.getBackToMainMenuButton().click();
         this.getBookInspectionScreen().click();
         this.getPromoCodeButton().click();
         this.getTypePromoCode().type(discount);
-        this.getApplyPromoButton().click();
+        this.getApplyPromoButton().click().wait(5000);
         this.getPaymentButton().click();
         this.getStripeButton().click()
         this.getStripeWindow().find('[id="Field-numberInput"]').type(cardNumber);

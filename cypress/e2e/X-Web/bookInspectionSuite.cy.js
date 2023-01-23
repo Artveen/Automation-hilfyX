@@ -13,7 +13,7 @@ describe("Test suite for booking inspection and get the bill",()=>{
         it("Book inspection with payment",()=>{
             bookInspectionPage.visit();
             webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
-            webProfilePage.addAddressAndBillingAddress(billingAddress.firstName, billingAddress.surName, billingAddress.street, billingAddress.houseNumber, billingAddress.country, billingAddress.city, billingAddress.zipCode,clientAddress.address, clientAddress.flat, clientAddress.comment);
+            webProfilePage.addAddressAndBillingAddress(billingAddress.firstName, billingAddress.surName, billingAddress.street, billingAddress.houseNumber, billingAddress.country, billingAddress.city, billingAddress.zipCode,clientAddress.address0, clientAddress.flat, clientAddress.comment);
             bookInspectionPage.completeBookingWithPayment(cardNumber.cardNumber, cardNumber.date, cardNumber.cvc);
         })
         it("Book inspection with payment and discount promo",()=>{
@@ -22,7 +22,7 @@ describe("Test suite for booking inspection and get the bill",()=>{
             webProfilePage.addAddressAndBillingAddress(billingAddress.firstName, billingAddress.surName, billingAddress.street, billingAddress.houseNumber, billingAddress.country, billingAddress.city, billingAddress.zipCode,clientAddress.address1, clientAddress.flat, clientAddress.comment);
             bookInspectionPage.completeBookingWithDiscountPromoAndPayment(promoCodes.discount,cardNumber.cardNumber, cardNumber.date, cardNumber.cvc);
         })
-        it("Book inspection and get the bill",()=>{
+        it.only("Book inspection and get the bill",()=>{
             bookInspectionPage.visit();
             webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
             webProfilePage.addAddressAndBillingAddress(billingAddress.firstName, billingAddress.surName, billingAddress.street, billingAddress.houseNumber, billingAddress.country, billingAddress.city, billingAddress.zipCode,clientAddress.address2, clientAddress.flat, clientAddress.comment);

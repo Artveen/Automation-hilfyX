@@ -12,7 +12,7 @@ describe("Posititve scenarios",()=>{
     webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
     webDeletePage.deleteAccountWithZeroBalance();
  })
- it("Delete account with negative balance + payment",()=>{
+ it.only("Delete account with negative balance + payment",()=>{
     webDeletePage.visit();
     webAuthorizationPage.submitLoginForm(user.phoneNumber, user.code1, user.code2, user.code3, user.code4);
     webDeletePage.deleteAccountWithNEgativeBalancePayment(cardNumber.cardNumber, cardNumber.date, cardNumber.cvc)

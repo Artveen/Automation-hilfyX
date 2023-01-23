@@ -3,7 +3,6 @@ import webAuthorizationPage from '../../support/pages/webClient/webAuthorization
 import user from "../../fixtures/webClient/user.json"
 import promoCodes from "../../fixtures/webClient/promoCodes.json"
 
-let token;
 
 describe("Test suite for booking remote assist",()=>{
 describe("Positive scenarios",()=>{
