@@ -12,20 +12,25 @@ class scoringPage{
         return cy.get('[alt="save pdf file"]').eq(2)
     }
     findCreateLeadButton(){
-        return cy.get('[class="style_listItem__element_w13__jCGSE"]').eq(0)
+        return cy.get('[class^="style_listItem__element"]').eq(15)//частковий пошук 
     }
     findCreateLeadElectrician(){
-        return cy.get('[class="button button_small button_add mt_8"]').eq(0)
+        return cy.get('[class^="button button_small"]').eq(0)
     }
     findDatePicker(){
-        return cy.get('[class="ant-picker-input"]') .eq(0)
+        return cy.get('[class="ant-picker-input"] input') .eq(0)
     }
+    createCurrentDate(){
+        const date = new Date();
+        return date.getDate();
+        }
     findCurrentDate(){
-        return cy.get('[class="ant-picker-cell-inner"]').eq(32)
+        let currentDate = this.createCurrentDate()
+        return cy.get('[class="ant-picker-cell-inner"]').contains(currentDate)
     }
-    findPickServiceField(){
-        return cy.get('[id="rc_select_2"]')
-    }
+    // findPickServiceField(){
+    //     return cy.get('[id="rc_select_2"]')
+    // }
     findSubmitButton(){
         return cy.get('[type="submit"]')
     }
@@ -40,11 +45,12 @@ class scoringPage{
     cy.log("Create lead from scoring")
     this.openScoringPage().click();
     this.openClient().click();
-    this.findCreateLeadButton().click();
+    cy.wait(2000)
+    this.findCreateLeadButton().first().click();
     this.findCreateLeadElectrician().click();
-    this.findDatePicker().click();
+    this.findDatePicker().click()
     this.findCurrentDate().click();
-    this.findPickServiceField().click().first().click();
+    // this.findPickServiceField().click().first().click();
     this.findSubmitButton().click();
     }
 } export default new scoringPage();

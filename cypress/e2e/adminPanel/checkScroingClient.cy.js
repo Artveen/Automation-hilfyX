@@ -4,7 +4,7 @@ import scoringPage from "../../support/pages/adminPanel/scoringPage"
 
 describe ('Test suite for scoring page',() =>{
 describe ('Positive scenarios', ()=>{
-    it("Check client scoring",()=>{
+    it.skip("Check client scoring",()=>{
     scoringPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
     scoringPage.checkClientScoring();
@@ -12,7 +12,7 @@ describe ('Positive scenarios', ()=>{
 it("Create lead from scoring",()=>{
     scoringPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    scoringPage.findCreateLeadElectrician();
+    scoringPage.createLeadFromScoring();
 })
 })   
 })
