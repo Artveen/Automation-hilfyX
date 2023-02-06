@@ -4,7 +4,7 @@ import scoringPage from "../../support/pages/adminPanel/scoringPage"
 
 describe ('Test suite for scoring page',() =>{
 describe ('Positive scenarios', ()=>{
-    it.skip("Check client scoring",()=>{
+    it("Check client scoring",()=>{
     scoringPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
     scoringPage.checkClientScoring();

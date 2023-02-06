@@ -7,7 +7,8 @@ it('Add new master',()=>{
     authorizationPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
     cy.get('.style_nav__menuLink__Zqjge[href="/admin/employee"]').click();
-    cy.contains('21').parent().find('svg').click();
+    // cy.contains('21').parent().find('svg').click();
+    cy.get('[viewBox="0 0 122.88 120.06"]').eq(0).click();
     cy.get('[class="button button_add button_foz14"]').click();
     let currentDate =  createCurrentDate();
     cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
