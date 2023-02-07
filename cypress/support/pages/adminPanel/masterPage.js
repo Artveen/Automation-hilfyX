@@ -9,22 +9,41 @@ class masterPage{
         return cy.get('[class="button button_add button_bottom"]');
     }
     enterMasterName(){
-        return cy.get('[name="first_name"]')
+        return cy.get('[name="first_name"]');
     }
     enterMasterSurname(){
-        return cy.get('[name="last_name"]')
+        return cy.get('[name="last_name"]');
     }
     enterMasterEmail(){
-        return cy.get('[name="email"]')
+        return cy.get('[name="email"]');
     }
     enterMasterPassword(){
-        return cy.get('[name="password"]')
+        return cy.get('[name="password"]');
     }
     enterRepeatMasterPassword(){
-        return cy.get('[name="repeatPassword"]')
+        return cy.get('[name="repeatPassword"]');
     }
     pickService(){
-        return cy.get('[name="service_uuids"]')
+        return cy.get('[name="service_uuids"]').eq(1);
+    }
+    pickLanguage(){
+        return cy.get('[name="language_uuids"]').eq(1);
+    }
+    findSubmitCreationButton(){
+        cy.get('[class="button button_medium button_foz14 ml_8"]')
+    }
+    createNewEmployee(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create new employee')
+        this.openEmployeePage().click();
+        this.findAddEmployeeButton().click();
+        this.enterMasterName().type(masterName);
+        this.enterMasterSurname().type(masterSurname);
+        this.enterMasterEmail().type(masterEmail);
+        this.enterMasterPassword().type(masterPassword);
+        this.enterRepeatMasterPassword().type(masterRepeatPassword);
+        this.pickService().click();
+        this.pickLanguage().click();
+        this.findSubmitCreationButton().click();
     }
 } export default new masterPage();
 // cy.get('.style_nav__menuLink__Zqjge[href="/admin/employee"]').click();
