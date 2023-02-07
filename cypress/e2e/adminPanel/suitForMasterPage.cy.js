@@ -1,10 +1,11 @@
-import authorizationPage from '../../support/pages/adminPanel/AuthorizationPage'
+import masterPage from '../../support/pages/adminPanel/masterPage'
 import superAdmin from '../../fixtures/superAdmin/superAdmin.json'
+import authorizationPage from '../../support/pages/adminPanel/AuthorizationPage'
 
 describe ('Test suite for master page',()=>{
 describe('Positive scenarios',()=>{
 it('Add new master',()=>{
-    authorizationPage.visit();
+    masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
     cy.get('.style_nav__menuLink__Zqjge[href="/admin/employee"]').click();
     // cy.contains('21').parent().find('svg').click();

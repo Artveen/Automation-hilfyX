@@ -1,0 +1,7 @@
+{
+  "masterName": "Test1",
+  "masterSurname": "Master1",
+  "masterEmail": "test.master@gmail.com",
+  "masterPassword": "12345678",
+  "masterRepeatPassword": "12345678"
+}
