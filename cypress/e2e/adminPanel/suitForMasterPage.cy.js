@@ -1,45 +1,35 @@
 import masterPage from '../../support/pages/adminPanel/masterPage'
 import superAdmin from '../../fixtures/superAdmin/superAdmin.json'
 import authorizationPage from '../../support/pages/adminPanel/AuthorizationPage'
+import addMaster from '../../fixtures/superAdmin/addMaster.json'
 
-describe ('Test suite for master page',()=>{
-describe('Positive scenarios',()=>{
-it('Add new master',()=>{
+it("Create plumber only monday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    cy.get('.style_nav__menuLink__Zqjge[href="/admin/employee"]').click();
-    // cy.contains('21').parent().find('svg').click();
-    cy.get('[viewBox="0 0 122.88 120.06"]').eq(0).click();
-    cy.get('[class="button button_add button_foz14"]').click();
-    let currentDate =  createCurrentDate();
-    cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
-    findCurrentDate().click();
-    cy.get('[class="ant-picker-header-next-btn"]').eq(1).dblclick();
-    findCurrentDate().click();
-    cy.get('[class^="working-day"]').eq(1).click();
-    cy.get('[class^="working-day"]').eq(2).click();
-    cy.get('[class^="working-day"]').eq(3).click();
-    cy.get('[class^="working-day"]').eq(4).click();
-    cy.get('[class^="working-day"]').eq(5).click();
-    cy.get('[type="submit"]').click();
-    // cy.get('[class="button button_add button_bottom"]').click();
-    // cy.get('[name="first_name"]').type('Test');
-    // cy.get('[name="last_name"]').type('Master');
-    // cy.get('[name="email"]').type('ia.hilfy+837@gmail.com');
-    // cy.get('[name="password"]').type('12345678',{force:true});
-    // cy.get('[name="repeatPassword"]').type('12345678',{force:true});
-    // cy.get('[name="service_uuids"]').eq(1).click();
-    // cy.get('[name="language_uuids"]').eq(1).click();
-    // cy.get('[class="button button_medium button_foz14 ml_8"]').click();
-
-})    
-})    
+    masterPage.createNewEmployeeMonday(addMaster.masterName, addMaster.masterSurname, addMaster.masterEmail, addMaster.masterPassword, addMaster.masterRepeatPassword);
 })
-function createCurrentDate(){
-    const date = new Date();
-    return date.getDate();
-    }
-function findCurrentDate(){
-    let currentDate = createCurrentDate()
-    return cy.get('[class="ant-picker-cell-inner"]').contains(currentDate)
-}
+it("Create electricity with plumber only tuesday schedule",()=>{
+    masterPage.visit();
+    authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
+    masterPage.createNewEmployeeTuesday(addMaster.masterName2, addMaster.masterSurname2, addMaster.masterEmail2, addMaster.masterPassword2, addMaster.masterRepeatPassword2);
+})
+it("Create electricity with handyman only wednesday schedule",()=>{
+    masterPage.visit();
+    authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
+    masterPage.createNewEmployeeWednesday(addMaster.masterName3, addMaster.masterSurname3, addMaster.masterEmail3, addMaster.masterPassword3, addMaster.masterRepeatPassword3);
+})
+it("Create inspection only thursday schedule",()=>{
+    masterPage.visit();
+    authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
+    masterPage.createNewEmployeeThursday(addMaster.masterName4, addMaster.masterSurname4, addMaster.masterEmail4, addMaster.masterPassword4, addMaster.masterRepeatPassword4);
+})
+it("Create handyman only friday schedule",()=>{
+    masterPage.visit();
+    authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
+    masterPage.createNewEmployeeFriday(addMaster.masterName5, addMaster.masterSurname5, addMaster.masterEmail5, addMaster.masterPassword5, addMaster.masterRepeatPassword5);
+})
+it("Create handyman with plumber with electricity only saturday schedule",()=>{
+    masterPage.visit();
+    authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
+    masterPage.createNewEmployeeSaturday(addMaster.masterName6, addMaster.masterSurname6, addMaster.masterEmail6, addMaster.masterPassword6, addMaster.masterRepeatPassword6);
+})

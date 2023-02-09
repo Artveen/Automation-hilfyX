@@ -23,52 +23,223 @@ class masterPage{
     enterRepeatMasterPassword(){
         return cy.get('[name="repeatPassword"]');
     }
-    pickService(){
+    pickServiceElectricity(){
+        return cy.get('[name="service_uuids"]').eq(0);
+    }
+    pickServicePlumber(){
         return cy.get('[name="service_uuids"]').eq(1);
+    }
+    pickServiceHandyman(){
+        return cy.get('[name="service_uuids"]').eq(2);
+    }
+    pickServiceInspection(){
+        return cy.get('[name="service_uuids"]').eq(3);
     }
     pickLanguage(){
         return cy.get('[name="language_uuids"]').eq(1);
     }
     findSubmitCreationButton(){
-        cy.get('[class="button button_medium button_foz14 ml_8"]')
+        return cy.get('[class="button button_medium button_foz14 ml_8"]')
     }
-    createNewEmployee(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
-        cy.log('Create new employee')
+    findScheduleCreatorButton(){
+        return cy.get('[viewBox="0 0 122.88 120.06"]').eq(0)
+    }
+    findAddScheduleButton(){
+       return cy.get('[class="button button_add button_foz14"]')
+    }
+
+    findCurrentDate(){
+            const date = new Date();
+            let currentDate = date.getDate()
+            return cy.get('[class="ant-picker-cell-inner"]').contains(currentDate)
+        }
+
+    choseFinishMonth(){
+        return cy.get('[class="ant-picker-header-next-btn"]').eq(1);
+    }
+    choseMonday(){
+        return cy.get('[class^="working-day"]').eq(1);
+    }
+    choseTuesday(){
+        return cy.get('[class^="working-day"]').eq(2);
+    }
+    choseWednesday(){
+        return cy.get('[class^="working-day"]').eq(3);
+    }
+    choseThursday(){
+        return cy.get('[class^="working-day"]').eq(4);
+    }
+    choseFriday(){
+        return cy.get('[class^="working-day"]').eq(5);
+    }
+    choseSaturday(){
+        return cy.get('[class^="working-day"]').eq(6);
+    }
+    choseSunday(){
+        return cy.get('[class^="working-day"]').eq(7);
+    }
+    findSubmitScheduleButton(){
+        return cy.get('[type="submit"]');
+    }
+
+    createNewEmployeeMonday(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create electricity with plumber only monday schedule')
         this.openEmployeePage().click();
         this.findAddEmployeeButton().click();
         this.enterMasterName().type(masterName);
         this.enterMasterSurname().type(masterSurname);
         this.enterMasterEmail().type(masterEmail);
-        this.enterMasterPassword().type(masterPassword);
+        this.enterMasterPassword().type(masterPassword,{force:true});
         this.enterRepeatMasterPassword().type(masterRepeatPassword);
-        this.pickService().click();
+        this.pickServicePlumber().click();
         this.pickLanguage().click();
         this.findSubmitCreationButton().click();
+        this.findScheduleCreatorButton().click();
+        this.findAddScheduleButton().click();
+        cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
+        this.findCurrentDate().click();
+        this.choseFinishMonth().dblclick();
+        this.findCurrentDate().click();
+        this.choseMonday().click();
+        this.findSubmitScheduleButton().click();
+    }
+    createNewEmployeeTuesday(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create electricity with plumber only monday schedule')
+        this.openEmployeePage().click();
+        this.findAddEmployeeButton().click();
+        this.enterMasterName().type(masterName);
+        this.enterMasterSurname().type(masterSurname);
+        this.enterMasterEmail().type(masterEmail);
+        this.enterMasterPassword().type(masterPassword,{force:true});
+        this.enterRepeatMasterPassword().type(masterRepeatPassword);
+        this.pickServicePlumber().click();
+        this.pickServiceElectricity().click();
+        this.pickLanguage().click();
+        this.findSubmitCreationButton().click();
+        this.findScheduleCreatorButton().click();
+        this.findAddScheduleButton().click();
+        cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
+        this.findCurrentDate().click();
+        this.choseFinishMonth().dblclick();
+        this.findCurrentDate().click();
+        this.choseTuesday().click();
+        this.findSubmitScheduleButton().click();
+    }
+    createNewEmployeeWednesday(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create electricity with handyman only wednesday schedule')
+        this.openEmployeePage().click();
+        this.findAddEmployeeButton().click();
+        this.enterMasterName().type(masterName);
+        this.enterMasterSurname().type(masterSurname);
+        this.enterMasterEmail().type(masterEmail);
+        this.enterMasterPassword().type(masterPassword,{force:true});
+        this.enterRepeatMasterPassword().type(masterRepeatPassword);
+        this.pickServiceHandyman().click();
+        this.pickServiceElectricity().click();
+        this.pickLanguage().click();
+        this.findSubmitCreationButton().click();
+        this.findScheduleCreatorButton().click();
+        this.findAddScheduleButton().click();
+        cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
+        this.findCurrentDate().click();
+        this.choseFinishMonth().dblclick();
+        this.findCurrentDate().click();
+        this.choseWednesday().click();
+        this.findSubmitScheduleButton().click();
+    }
+    createNewEmployeeThursday(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create inspection only thursday schedule')
+        this.openEmployeePage().click();
+        this.findAddEmployeeButton().click();
+        this.enterMasterName().type(masterName);
+        this.enterMasterSurname().type(masterSurname);
+        this.enterMasterEmail().type(masterEmail);
+        this.enterMasterPassword().type(masterPassword,{force:true});
+        this.enterRepeatMasterPassword().type(masterRepeatPassword);
+        this.pickServiceInspection().click();
+        this.pickLanguage().click();
+        this.findSubmitCreationButton().click();
+        this.findScheduleCreatorButton().click();
+        this.findAddScheduleButton().click();
+        cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
+        this.findCurrentDate().click();
+        this.choseFinishMonth().dblclick();
+        this.findCurrentDate().click();
+        this.choseThursday().click();
+        this.findSubmitScheduleButton().click();
+    }
+    createNewEmployeeFriday(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create handyman only friday schedule')
+        this.openEmployeePage().click();
+        this.findAddEmployeeButton().click();
+        this.enterMasterName().type(masterName);
+        this.enterMasterSurname().type(masterSurname);
+        this.enterMasterEmail().type(masterEmail);
+        this.enterMasterPassword().type(masterPassword,{force:true});
+        this.enterRepeatMasterPassword().type(masterRepeatPassword);
+        this.pickServiceHandyman().click();
+        this.pickLanguage().click();
+        this.findSubmitCreationButton().click();
+        this.findScheduleCreatorButton().click();
+        this.findAddScheduleButton().click();
+        cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
+        this.findCurrentDate().click();
+        this.choseFinishMonth().dblclick();
+        this.findCurrentDate().click();
+        this.choseFriday().click();
+        this.findSubmitScheduleButton().click();
+    }
+    createNewEmployeeSaturday(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create handyman with plumber with electricity only saturday schedule')
+        this.openEmployeePage().click();
+        this.findAddEmployeeButton().click();
+        this.enterMasterName().type(masterName);
+        this.enterMasterSurname().type(masterSurname);
+        this.enterMasterEmail().type(masterEmail);
+        this.enterMasterPassword().type(masterPassword,{force:true});
+        this.enterRepeatMasterPassword().type(masterRepeatPassword);
+        this.pickServiceElectricity().click();
+        this.pickServicePlumber().click();
+        this.pickServiceHandyman().click();
+        this.pickLanguage().click();
+        this.findSubmitCreationButton().click();
+        this.findScheduleCreatorButton().click();
+        this.findAddScheduleButton().click();
+        cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
+        this.findCurrentDate().click();
+        this.choseFinishMonth().dblclick();
+        this.findCurrentDate().click();
+        this.choseSaturday().click();
+        this.findSubmitScheduleButton().click();
+    }
+    createNewEmployeeSevenDays(masterName, masterSurname, masterEmail, masterPassword,masterRepeatPassword){
+        cy.log('Create handyman with plumber with electricity and inspection with seven days schedule')
+        this.openEmployeePage().click();
+        this.findAddEmployeeButton().click();
+        this.enterMasterName().type(masterName);
+        this.enterMasterSurname().type(masterSurname);
+        this.enterMasterEmail().type(masterEmail);
+        this.enterMasterPassword().type(masterPassword,{force:true});
+        this.enterRepeatMasterPassword().type(masterRepeatPassword);
+        this.pickServiceElectricity().click();
+        this.pickServicePlumber().click();
+        this.pickServiceHandyman().click();
+        this.pickServiceInspection().click();
+        this.pickLanguage().click();
+        this.findSubmitCreationButton().click();
+        this.findScheduleCreatorButton().click();
+        this.findAddScheduleButton().click();
+        cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
+        this.findCurrentDate().click();
+        this.choseFinishMonth().dblclick();
+        this.findCurrentDate().click();
+        this.choseMonday().click();
+        this.choseTuesday().click();
+        this.choseWednesday().click();
+        this.choseThursday().click();
+        this.choseFriday().click();
+        this.choseSaturday().click();
+        this.choseSunday().click();
+        this.findSubmitScheduleButton().click();
     }
 } export default new masterPage();
-// cy.get('.style_nav__menuLink__Zqjge[href="/admin/employee"]').click();
-// // cy.contains('21').parent().find('svg').click();
-// cy.get('[viewBox="0 0 122.88 120.06"]').eq(0).click();
-// cy.get('[class="button button_add button_foz14"]').click();
-// let currentDate =  createCurrentDate();
-// cy.get('[class="ant-picker-input ant-picker-input-active"]').click();
-// findCurrentDate().click();
-// cy.get('[class="ant-picker-header-next-btn"]').eq(1).dblclick();
-// findCurrentDate().click();
-// cy.get('[class^="working-day"]').eq(1).click();
-// cy.get('[class^="working-day"]').eq(2).click();
-// cy.get('[class^="working-day"]').eq(3).click();
-// cy.get('[class^="working-day"]').eq(4).click();
-// cy.get('[class^="working-day"]').eq(5).click();
-// cy.get('[type="submit"]').click();
-
-
-// // cy.get('[class="button button_add button_bottom"]').click();
-// // cy.get('[name="first_name"]').type('Test');
-// // cy.get('[name="last_name"]').type('Master');
-// // cy.get('[name="email"]').type('ia.hilfy+837@gmail.com');
-// // cy.get('[name="password"]').type('12345678',{force:true});
-// // cy.get('[name="repeatPassword"]').type('12345678',{force:true});
-// // cy.get('[name="service_uuids"]').eq(1).click();
-// // cy.get('[name="language_uuids"]').eq(1).click();
-// // cy.get('[class="button button_medium button_foz14 ml_8"]').click();
