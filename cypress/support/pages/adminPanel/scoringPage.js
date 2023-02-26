@@ -6,7 +6,7 @@ class scoringPage{
         return cy.get('.style_nav__menuLink__Zqjge[href="/admin/scoring"]')
     }
     openClient(){
-        return cy.get('[class="c-p style_listItem__JIwWN"]').eq(0)
+        return cy.get('[class="c-p style_listItem__JIwWN"]').eq(1)
     }
     openPDF(){
         return cy.get('[alt="save pdf file"]').eq(2)

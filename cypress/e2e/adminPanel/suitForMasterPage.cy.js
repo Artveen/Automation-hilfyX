@@ -33,3 +33,8 @@ it("Create handyman with plumber with electricity only saturday schedule",()=>{
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
     masterPage.createNewEmployeeSaturday(addMaster.masterName6, addMaster.masterSurname6, addMaster.masterEmail6, addMaster.masterPassword6, addMaster.masterRepeatPassword6);
 })
+it.only("Create handyman with plumber with electricity only saturday schedule",()=>{
+    masterPage.visit();
+    authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
+    masterPage.createNewEmployeeSevenDays(addMaster.masterName7, addMaster.masterSurname7, addMaster.masterEmail7, addMaster.masterPassword7, addMaster.masterRepeatPassword7);
+})
