@@ -1,42 +1,58 @@
-{
-  "masterName": "Test1",
-  "masterSurname": "Master1",
-  "masterEmail": "test.master+7@gmail.com",
-  "masterPassword": "12345678",
-  "masterRepeatPassword": "12345678",
-  "masterName2": "Test2",
-  "masterSurname2": "Master2",
-  "masterEmail2": "test.master+223@gmail.com",
-  "masterPassword2": "12345678",
-  "masterRepeatPassword2": "12345678",
-  "masterName3": "Test3",
-  "masterSurname3": "Master2",
-  "masterEmail3": "test.master+333@gmail.com",
-  "masterPassword3": "12345678",
-  "masterRepeatPassword3": "12345678",
-  "masterName4": "Test4",
-  "masterSurname4": "Master4",
-  "masterEmail4": "test.master+444@gmail.com",
-  "masterPassword4": "12345678",
-  "masterRepeatPassword4": "12345678",
-  "masterName5": "Test5",
-  "masterSurname5": "Master5",
-  "masterEmail5": "test.master+55@gmail.com",
-  "masterPassword5": "12345678",
-  "masterRepeatPassword5": "12345678",
-  "masterName6": "Test6",
-  "masterSurname6": "Master6",
-  "masterEmail6": "test.master+666@gmail.com",
-  "masterPassword6": "12345678",
-  "masterRepeatPassword6": "12345678",
-  "masterName7": "Test7",
-  "masterSurname7": "Master7",
-  "masterEmail7": "test.master+17@gmail.com",
-  "masterPassword7": "12345678",
-  "masterRepeatPassword7": "12345678",
-  "masterName8": "Test8",
-  "masterSurname8": "Master8",
-  "masterEmail8": "test.master+1488@gmail.com",
-  "masterPassword8": "12345678",
-  "masterRepeatPassword8": "12345678"
-}
+[
+  {
+    "masterName": "Test1",
+    "masterSurname": "Master1",
+    "masterEmail": "test.master+9395137@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  },
+  {
+    "masterName": "Test2",
+    "masterSurname": "Master2",
+    "masterEmail": "test.master+5235134@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  },
+  {
+    "masterName": "Test3",
+    "masterSurname": "Master2",
+    "masterEmail": "test.master+3631344@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  },
+  {
+    "masterName": "Test4",
+    "masterSurname": "Master4",
+    "masterEmail": "test.master+4354163@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  },
+  {
+    "masterName": "Test5",
+    "masterSurname": "Master5",
+    "masterEmail": "test.master+531565@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  },
+  {
+    "masterName": "Test6",
+    "masterSurname": "Master6",
+    "masterEmail": "test.master+6136656@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  },
+  {
+    "masterName": "Test7",
+    "masterSurname": "Master7",
+    "masterEmail": "test.master+1131367@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  },
+  {
+    "masterName": "Test8",
+    "masterSurname": "Master8",
+    "masterEmail": "test.master+14136388@gmail.com",
+    "masterPassword": "12345678",
+    "masterRepeatPassword": "12345678"
+  }
+]

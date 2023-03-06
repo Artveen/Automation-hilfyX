@@ -2,39 +2,45 @@ import masterPage from '../../support/pages/adminPanel/masterPage'
 import superAdmin from '../../fixtures/superAdmin/superAdmin.json'
 import authorizationPage from '../../support/pages/adminPanel/AuthorizationPage'
 import addMaster from '../../fixtures/superAdmin/addMaster.json'
+import {deleteEmployee} from '../../support/helper'
 
 it("Create plumber only monday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    masterPage.createNewEmployeeMonday(addMaster.masterName, addMaster.masterSurname, addMaster.masterEmail, addMaster.masterPassword, addMaster.masterRepeatPassword);
+    masterPage.createNewEmployeeMonday(addMaster[0].masterName, addMaster[0].masterSurname, addMaster[0].masterEmail, addMaster[0].masterPassword, addMaster[0].masterRepeatPassword);
 })
 it("Create electricity with plumber only tuesday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    masterPage.createNewEmployeeTuesday(addMaster.masterName2, addMaster.masterSurname2, addMaster.masterEmail2, addMaster.masterPassword2, addMaster.masterRepeatPassword2);
+    masterPage.createNewEmployeeTuesday(addMaster[1].masterName, addMaster[1].masterSurname, addMaster[1].masterEmail, addMaster[1].masterPassword, addMaster[1].masterRepeatPassword);
 })
 it("Create electricity with handyman only wednesday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    masterPage.createNewEmployeeWednesday(addMaster.masterName3, addMaster.masterSurname3, addMaster.masterEmail3, addMaster.masterPassword3, addMaster.masterRepeatPassword3);
+    masterPage.createNewEmployeeWednesday(addMaster[2].masterName, addMaster[2].masterSurname, addMaster[2].masterEmail, addMaster[2].masterPassword, addMaster[2].masterRepeatPassword);
 })
 it("Create inspection only thursday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    masterPage.createNewEmployeeThursday(addMaster.masterName4, addMaster.masterSurname4, addMaster.masterEmail4, addMaster.masterPassword4, addMaster.masterRepeatPassword4);
+    masterPage.createNewEmployeeThursday(addMaster[3].masterName, addMaster[3].masterSurname, addMaster[3].masterEmail, addMaster[3].masterPassword, addMaster[3].masterRepeatPassword);
 })
 it("Create handyman only friday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    masterPage.createNewEmployeeFriday(addMaster.masterName5, addMaster.masterSurname5, addMaster.masterEmail5, addMaster.masterPassword5, addMaster.masterRepeatPassword5);
+    masterPage.createNewEmployeeFriday(addMaster[4].masterName, addMaster[4].masterSurname, addMaster[4].masterEmail, addMaster[4].masterPassword, addMaster[4].masterRepeatPassword);
 })
 it("Create handyman with plumber with electricity only saturday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    masterPage.createNewEmployeeSaturday(addMaster.masterName6, addMaster.masterSurname6, addMaster.masterEmail6, addMaster.masterPassword6, addMaster.masterRepeatPassword6);
+    masterPage.createNewEmployeeSaturday(addMaster[5].masterName, addMaster[5].masterSurname, addMaster[5].masterEmail, addMaster[5].masterPassword, addMaster[5].masterRepeatPassword);
 })
-it.only("Create handyman with plumber with electricity only saturday schedule",()=>{
+it("Create handyman with plumber with electricity only saturday schedule",()=>{
     masterPage.visit();
     authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
-    masterPage.createNewEmployeeSevenDays(addMaster.masterName7, addMaster.masterSurname7, addMaster.masterEmail7, addMaster.masterPassword7, addMaster.masterRepeatPassword7);
+    masterPage.createNewEmployeeSevenDays(addMaster[6].masterName, addMaster[6].masterSurname, addMaster[6].masterEmail, addMaster[6].masterPassword, addMaster[6].masterRepeatPassword);
+})
+after(()=>{
+    for(let i=0; i<addMaster.length-1; i ++){
+        deleteEmployee(addMaster[i].masterEmail)
+    }
 })

@@ -8,7 +8,7 @@ getLoginField(){
 }
 
 getPasswordField(){
-    return cy.get('[name="password"]')
+    return cy.get('[type="password"]')
 }
 
 getSubmitButton(){
@@ -21,16 +21,17 @@ submitLoginForm(email, password){
     this.getLoginField().type(email);
     this.getPasswordField().type(password);
     this.getSubmitButton().click();
+    cy.contains('p','Admin Super',{timeout:120000}).should('be.visible')
 }
 
-submitLoginFormNegativEmail(Email, Password){
+submitLoginFormNegativeEmail(Email, Password){
     cy.log("Fill form with negative email")
     this.getLoginField().type(Email)
     this.getPasswordField().type(Password);
     this.getSubmitButton().click();
 }
 
-submitLoginFormNegativBigEmail(email1, Password){
+submitLoginFormNegativeBigEmail(email1, Password){
     cy.log("Fill form with 300 symbols in email")
     this.getLoginField().type(email1)
     this.getPasswordField().type(Password);
@@ -44,7 +45,7 @@ submitLoginFormWithShortPassword(email, password1){
     this.getSubmitButton().click();
 }
 
-submitLoginFormWithLongUncorrecttPassword(email, password2){
+submitLoginFormWithLongUncorrectPassword(email, password2){
     cy.log("Login with pasword with long uncorrect password")
     this.getLoginField().type(email)
     this.getPasswordField().type(password2);
