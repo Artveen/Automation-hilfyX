@@ -1,6 +1,6 @@
 import authorizationPage from "../../support/pages/adminPanel/authorizationPage";
-import superAdmin from "../../fixtures/superAdmin/superAdmin.json"
 import scoringPage from "../../support/pages/adminPanel/scoringPage"
+import superAdmin from "../../fixtures/superAdmin/superAdmin.json"
 
 describe ('Test suite for scoring page',() =>{
 describe ('Positive scenarios', ()=>{

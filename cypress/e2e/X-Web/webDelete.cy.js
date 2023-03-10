@@ -1,8 +1,8 @@
 import 'cypress-iframe'
 import webDeletePage from "../../support/pages/webClient/webDeletePage";
+import webAuthorizationPage from '../../support/pages/webClient/webAuthorizationPage'
 import user from "../../fixtures/webClient/user.json"
 import cardNumber from "../../fixtures/webClient/cardNumber.json"
-import webAuthorizationPage from '../../support/pages/webClient/webAuthorizationPage'
 
 
 describe ("Test suite for delete account", ()=>{

@@ -32,9 +32,9 @@ class bookingPageRemoteAssist {
         cy.log("Create remote assist with referal promo")
         this.getBookingPage().click();
         this.getTimePicker().click();
-        //this.getPromoCodeWindow().click();
-        //this.getPromoCodeField().type(referal);
-        //this.applyPromoCode().click();
+        this.getPromoCodeWindow().click();
+        this.getPromoCodeField().type(referal);
+        this.applyPromoCode().click();
         this.submitBooking().click();
     }
 } export default new bookingPageRemoteAssist

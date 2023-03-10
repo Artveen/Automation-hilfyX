@@ -1,6 +1,6 @@
 import masterPage from '../../support/pages/adminPanel/masterPage'
-import superAdmin from '../../fixtures/superAdmin/superAdmin.json'
 import authorizationPage from '../../support/pages/adminPanel/AuthorizationPage'
+import superAdmin from '../../fixtures/superAdmin/superAdmin.json'
 import addMaster from '../../fixtures/superAdmin/addMaster.json'
 import {deleteEmployee} from '../../support/helper'
 
