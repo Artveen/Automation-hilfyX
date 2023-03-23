@@ -51,6 +51,9 @@ class LeadsPage{
     findSaveNewLeadButton(){
         return cy.get('[class="button button_medium button_foz14 ml_8"]')
     }
+    findAcceptSaveLeadButton(){
+        return cy.get('[class="ant-btn ant-btn-primary"]')
+    }
 
     assignLead(){
         cy.log('Assign new lead');
@@ -87,5 +90,6 @@ class LeadsPage{
         this.findSurnameField().type(surname);
         this.findPhoneNumberField().type(phoneNumber);
         this.findSaveNewLeadButton().click();
+        this.findAcceptSaveLeadButton().click();
     }
 }export default new LeadsPage();
