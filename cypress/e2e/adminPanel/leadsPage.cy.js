@@ -5,12 +5,12 @@ import createLead from "../../fixtures/superAdmin/ createLead.json"
 
 describe ("Tests for leads page",() =>{
     describe ("Positive scenarios", ()=>{
-        it ("Assign lead",()=>{
+        it.only ("Assign lead",()=>{
             leadsPage.visit();
             authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password);
             leadsPage.assignLead();
         })
-        it.only("Delete lead",()=>{
+        it("Delete lead",()=>{
             leadsPage.visit();
             authorizationPage.submitLoginForm(superAdmin.email, superAdmin.password)
             leadsPage.deleteNewLead();
